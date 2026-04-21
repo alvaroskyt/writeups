@@ -35,3 +35,21 @@ Ahora se ejecuta hydra pero con la nueva wordlist.
 hydra -l tails -P /tmp/rockyou-rev.txt ssh://172.17.0.2 -t 4
 ```
 > -l sirve para indicar el usuario y -P busca la contraseña en una wordlist.
+### Resultado
+Despues de poco tiempo encuentra una contraseña.
+<img width="838" height="114" alt="image" src="https://github.com/user-attachments/assets/c08a798c-4d93-4904-ab96-2afd4c7f2b1d" />
+## Acceso por SSH
+Accedemos por SSH con el usuario trails y la contrasñea encontrada.
+```bash
+ssh tails@172.17.0.2
+```
+## Escalada de privilegios
+Ejecutamos un ```sudo -l```.
+<img width="589" height="70" alt="image" src="https://github.com/user-attachments/assets/16f358f2-5a48-4020-8bd9-6fd28ce2a17a" />
+Vemos que tails puede ejecutar cualquier comando con sonic.
+Cambiamos:
+```bash
+sudo -u sonic bash
+```
+El usuario sonic puede ejcutar todo como root sin contraseña.
+Maquina resuelta - Se accede como root.
