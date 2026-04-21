@@ -9,7 +9,7 @@
 | IP | 172.17.0.2 |
 | OS | Linux (Docker) |
 | Puertos abiertos | 21 (ftp) |
-## Enumeracion de puertos
+## Reconocimiento de puertos
 Ejecutamos ```nmap``` con el parametro -sV para que nos de tambien la version.
 ```
 nmap -sV 172.17.0.2
